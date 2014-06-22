@@ -65,44 +65,62 @@ function.
 	}
 
 ### Examples
+
 Let's define a matrix
+
 	> m <- matrix(1:4,2,2)
 	> m
 	     [,1] [,2]
 	[1,]    1    3
 	[2,]    2    4
+
 And create the `special` cache-matrix
+
 	> mc <- makeCacheMatrix(mc)
+
 We can retrieve the matrix m
+
 	> mc$get()
     	 [,1] [,2]
 	[1,]    1    3
 	[2,]    2    4
+
 that doesn't have any inverse matrix associated with it yet
+
 	> mc$getinv()
 	NULL
+
 We can compute it and store it for later use
+
 	> mc$compinv()
 	> mc$getinv()
 	     [,1] [,2]
 	[1,]   -2  1.5
 	[2,]    1 -0.5
+
 (A simple check that we got it right)
+
 	> mc$get() %*% mc$getinv()
     	 [,1] [,2]
 	[1,]    1    0
 	[2,]    0    1
+
 Running cacheSolve on `mc` returns the inverse matrix w/o recomputing it.
+
 	> cacheSolve(mc)
 	getting cached data
     	 [,1] [,2]
 	[1,]   -2  1.5
 	[2,]    1 -0.5
+
 However, if we reset the matrix using the `set` attribute, the inverse matrix is lost 
+
 	> mc$set(m)
 	> mc$getinv()
 	NULL
+
 and cacheSolve recomputes it.
+
 	> cacheSolve(mc)
 	computing...
     	 [,1] [,2]
