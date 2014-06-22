@@ -76,7 +76,7 @@ Let's define a matrix
 
 And create the *special* cache-matrix
 
-	> mc <- makeCacheMatrix(mc)
+	> mc <- makeCacheMatrix(m)
 
 We can retrieve the matrix m
 
