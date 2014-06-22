@@ -68,9 +68,9 @@ function.
 
 	m <- matrix(1:4,2,2)
 	m
-     [,1] [,2]
-[1,]    1    3
-[2,]    2    4
+	>     [,1] [,2]
+	 [1,]    1    3
+	 [2,]    2    4
 	mc <- makeCacheMatrix(mc)
 	mc$get()
 	mc$getinv()
