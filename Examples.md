@@ -45,9 +45,9 @@ really a *list* containing a function to
 
 The following function calculates the inverse of the special "matrix"
 created with the above function. However, it first checks to see if the
-mean has already been calculated. If so, it `get`s the mean from the
+inverse has already been calculated. If so, it `get`s the inverse from the
 cache and skips the computation. Otherwise, it calculates the inverse of
-the matrix and sets the value of the mean in the cache via the `compinv`
+the matrix and sets the value in the cache via the `compinv`
 function.
 
 	cacheSolve <- function(x, ...) {
@@ -64,7 +64,7 @@ function.
     	xm1
 	}
 
-### Examples
+### Example
 
 Let's define a matrix
 
