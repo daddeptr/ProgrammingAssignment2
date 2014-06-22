@@ -74,7 +74,7 @@ Let's define a matrix
 	[1,]    1    3
 	[2,]    2    4
 
-And create the `special` cache-matrix
+And create the *special* cache-matrix
 
 	> mc <- makeCacheMatrix(mc)
 
@@ -105,7 +105,7 @@ We can compute it and store it for later use
 	[1,]    1    0
 	[2,]    0    1
 
-Running cacheSolve on `mc` returns the inverse matrix w/o recomputing it.
+Running `cacheSolve` on *mc* returns the inverse matrix w/o recomputing it.
 
 	> cacheSolve(mc)
 	getting cached data
@@ -119,7 +119,7 @@ However, if we reset the matrix using the `set` attribute, the inverse matrix is
 	> mc$getinv()
 	NULL
 
-and cacheSolve recomputes it.
+and `cacheSolve` recomputes it.
 
 	> cacheSolve(mc)
 	computing...
