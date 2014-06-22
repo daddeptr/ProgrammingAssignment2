@@ -66,11 +66,42 @@ function.
 
 ### Examples
 
-	m <- matrix(1:4,2,2)
-	m
-	>     [,1] [,2]
-	 [1,]    1    3
-	 [2,]    2    4
-	mc <- makeCacheMatrix(mc)
-	mc$get()
-	mc$getinv()
+	> m <- matrix(1:4,2,2)
+	> m
+	     [,1] [,2]
+	[1,]    1    3
+	[2,]    2    4
+	> mc <- makeCacheMatrix(mc)
+	> mc$get()
+    	 [,1] [,2]
+	[1,]    1    3
+	[2,]    2    4
+	> mc$getinv()
+	NULL
+	> mc$compinv()
+	> mc$getinv()
+	     [,1] [,2]
+	[1,]   -2  1.5
+	[2,]    1 -0.5
+	> mc$get() %*% mc$getinv()
+    	 [,1] [,2]
+	[1,]    1    0
+	[2,]    0    1
+	> cacheSolve(mc)
+	getting cached data
+    	 [,1] [,2]
+	[1,]   -2  1.5
+	[2,]    1 -0.5
+	> mc$set(m)
+	> cacheSolve(mc)
+	computing...
+    	 [,1] [,2]
+	[1,]   -2  1.5
+	[2,]    1 -0.5
+	
+	
+	
+	
+	
+	
+	
