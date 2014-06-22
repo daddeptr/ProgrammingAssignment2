@@ -90,7 +90,7 @@ that doesn't have any inverse matrix associated with it yet
 	> mc$getinv()
 	NULL
 
-We can compute it and store it for later use
+We can compute the inverse and store it for later use
 
 	> mc$compinv()
 	> mc$getinv()
