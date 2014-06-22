@@ -66,3 +66,7 @@ function.
 
 ### Examples
 
+	m <- matrix(1:4,2,2)
+	mc <- makeCacheMatrix(mc)
+	mc$get()
+	mc$getinv()
